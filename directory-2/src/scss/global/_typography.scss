@@ -1,0 +1,98 @@
+/**
+ * All generic typographic styles
+ *
+ * Set the base-level typography here. This includes shared h1, h2, etc as well as
+ * paragraphs, links, lists and so on. For specific buttons, headings and links create
+ * a separate file in /components/_mycomponent.scss
+ **/
+
+@include font-face('TradeGothic', '../fonts/TradeGothic/trade-gothic-webfont');
+@include font-face('TradeGothicBold2', '../fonts/TradeGothicBoldNo2/TradeGothicBoldNo2');
+@include font-face('TradeGothicLight', '../fonts/TradeGothicLight/tradegothicltstd-light');
+
+$heading-font: 'TradeGothicBold2';
+$body-font: 'TradeGothic', Arial, Helvetica, sans-serif;
+$base-font-size: 62.5%;
+
+body {
+	font-family: $body-font;
+	font-size: $base-font-size;
+	line-height: 1.5em;
+	color: $body-text; }
+
+h1 {
+	font-family: $heading-font;
+	font-size: 2.8em;
+	line-height: 1.3em;
+	margin: 0 0 20px;
+}
+
+h2 {
+	font-family: $heading-font;
+	font-size: 2.4em;
+	line-height: 1.2em;
+	margin: 0 0 15px;
+}
+
+h3 {
+	font-family: $heading-font;
+	font-size: 2em;
+	line-height: 1.4em;
+	margin: 0 0 15px;
+}
+
+h4 {
+	font-size: 1.7em;
+	line-height: 1em;
+	margin: 0 0 15px;
+  color: $blue2;
+}
+
+p {
+	font-size: 1.4em;
+	margin: 0 0 15px;
+	line-height: 1.4em; }
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		color: red;
+	}
+}
+
+p a {
+	font-size: 1em;
+	color: red;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+.content {
+	ul, ol {
+		padding: 0 0 0 20px;
+		margin: 0 0 15px;
+
+		li {
+			margin: 6px 0;
+			list-style-type: disc;
+			font-size: 1.4em;
+			line-height: 1.3em;
+
+			ul li {
+				font-size: 1em;
+			}
+		}
+	}
+
+	ol li {
+		list-style-type: inherit;
+		font-size: 1em;
+	}
+}

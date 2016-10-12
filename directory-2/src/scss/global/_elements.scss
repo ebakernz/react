@@ -1,0 +1,98 @@
+/*
+ * PAGE ELEMENTS
+ *
+ * do-dads and little dudesons
+ * buttons
+ * page links
+ *
+ */
+
+/* SVGS */
+
+.icon {
+  display: block;
+
+  width: 25px;
+  height: 25px;
+  background: url('../images/product-detail-icons.jpg') no-repeat;
+
+  &.svg { background: none; }
+  svg { width: 100%; }
+
+
+  &.contact { background-position: 2px 3px; }
+  &.email { background-position: 1px -46px; }
+  &.phone { background-position: 1px -107px; }
+  &.website { background-position: 1px -174pxx; }
+
+}
+
+.white svg .path { fill: $white; }
+.black svg .path { fill: $black; }
+.icon svg { width: 100%; height: 100%; }
+
+.large .icon { width: 160px; height: 160px; }
+.medium .icon { width: 40px; height: 40px; }
+.small .icon { width: 25px; height: 25px; }
+
+
+/* TAGLINE BANNER */
+.tagline {
+  padding: 15px;
+  text-align: center;
+
+  h2 {
+    color: $blue1;
+    font-size: 2em;
+    font-family: $body-font;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &.MarketPlace {
+    background: $black;
+  }
+
+}
+
+
+
+/** POPUPS **/
+#popups {
+	width: 620px;
+	height: 507px;
+	position: absolute;
+	z-index: 21;
+	display: none;
+
+  .popup-area {
+  	background: #fff;
+  	position: fixed;
+  	z-index: 1;
+  	display: none;
+  	box-shadow: 0 0 10px #111;
+    
+    .inner { width: 100%; height: 100%; margin: 0; overflow: scroll; }
+  }
+
+  /* Buttons */
+  .close-popup-button {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: -24px;
+    cursor: pointer;
+    font-size: 14px;
+    color: $white;
+  }
+
+}
+
+.popup-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	background: url('../images/popup-background.png');
+}

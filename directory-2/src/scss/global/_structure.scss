@@ -1,0 +1,78 @@
+/**
+ * Global structure elements
+ *
+ * General structural rules (like columns, clears and floats) that are shared
+ * throughout the whole site.
+ **/
+html, body { height: 100%; }
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+	overflow:hidden;
+}
+
+.inner {
+	width: 1200px;
+	margin: 0 auto; }
+
+.content {
+	padding: 30px 0;
+	background: $grey2;
+}
+
+.liner {
+	padding: 3em;
+}
+
+.float-left { float: left; }
+.float-right { float: right; }
+
+.w1x2 { width: 50%; }
+.w1x2-spaced { width: 49%; margin: 0 2% 0 0; &:last-child { margin: 0; }}
+
+.w1x3 { width: 33.33%; }
+.w2x3 { width: 66.66% }
+.w1x3-spaced { width: 30%; margin: 0 3.33% 0 0; }
+
+.w1x4 {	width: 25%; }
+.w3x4 { width: 75%; }
+.w3x4-left-spaced { width: 71%; margin-left: 3%; }
+
+.w4x5 { width: 80%; }
+.w3x5 { width: 60%; }
+.w2x5 { width: 40%; }
+.w1x5 { width: 20%; }
+
+.center {
+	text-align: center;
+}
+
+.clear {
+	clear: both; }
+
+
+// .cf:before,
+// .cf:after {
+//     content: " "; /* 1 */
+//     display: table; /* 2 */
+// }
+
+// .cf:after {
+//     clear: both;
+// }
+/* Clear fix */
+.cf:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.cf { display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .cf { height: 1%; }
+.cf { display: block; }
+/* close commented backslash hack */

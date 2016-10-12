@@ -1,0 +1,225 @@
+ /* ============================================================ Marketplace design ======== */
+ /* ===================================================================================== */
+
+.MarketPlace {
+  background: $grey2;
+}
+
+/* Top section with form and filters */
+
+.search-parameters {
+  padding: 10px 0 30px;
+}
+
+section {
+  h4 {
+    float: left;
+    margin: 11px 15px 4px 0;
+  }
+
+}
+
+.search-form {
+  margin: 20px 0;
+
+  h4 { margin-top: 15px; }
+}
+
+/* link button */
+.filter-link {
+  background: $grey1;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  color: $blue2;
+  display: inline-block;
+  margin: 4px 15px 4px 0;
+  padding: 7px 13px;
+  border-radius: 50px 50px;
+  cursor: pointer;
+
+  &:hover, &:focus,
+  &.active {
+    background: $blue2;
+    color: $white;
+  }
+
+  &.clear {
+    font-size: 1.5em;
+    margin-top: 7px;
+    padding: 9px 15px;
+  }
+
+}
+
+.filters {
+  clear: both;
+}
+
+/***
+    PRODUCTS SECTION
+***/
+
+.keys {
+
+  p {
+    width: 15%;
+    margin-right: 2%;
+    float: left;
+    line-height: 40px;
+
+    span.medium {
+        float: left;
+        margin-right: 8px; }
+
+  }
+
+  .search-terms {
+    width: 31%;
+    &.hide { span { display: none; } }
+    &.show { span { display: inline-block; } }
+    span.group,
+    span.category { text-transform: capitalize; }
+  }
+}
+
+/* PRODUCT OVERVIEW */
+.product {
+  background: $white;
+  min-height: 110px;
+  width: 23%;
+  margin: 0 2% 15px 0;
+  float: left;
+  display: block;
+  border-bottom: 2px solid;
+
+  &.MediumBlue {
+    border-color: $blue2;
+    .category-band { background: $blue2; }
+  }
+
+  &.LightBlue {
+    border-color: $blue1;
+    .category-band { background: $blue1; }
+  }
+
+  &.Black {
+    border-color: $black;
+    .category-band { background: $black; }
+  }
+
+  .category-band {
+    position: relative;
+    padding: 10px;
+    min-height: 30px;
+
+    h4 {
+      color: $white;
+      text-transform: uppercase;
+      font-family: $heading-font;
+      font-size: 1.2em;
+      margin: 0;
+      line-height: 1.2em;
+    }
+
+    .icons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      .cat-2 {
+        width: 45px;
+      }
+      .white { float: left; margin-left: 2px; }
+    }
+
+  }
+
+  .bgimg img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  h3 {
+    color: $grey3;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    margin: 10px;
+    min-height: 50px;
+  }
+
+  .popup-content { display: none; }
+
+}
+
+
+/* PRODUCT DETAIL POPUP */
+/* tweaks to product */
+.product.single {
+
+  p { color: $blue2; }
+
+  .category-band {
+    padding: 20px 30px;
+    min-height: auto;
+
+    h2 {
+      color: #fff;
+      text-transform: uppercase;
+      float: left;
+      margin: 0;
+    }
+
+    h4 {
+      font-size: 1.6em;
+      float: right;
+      margin-right: 50px;
+      margin-top: 4px;
+    }
+
+    .icons {
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  .details {
+    border-bottom: 1px solid $grey3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    img { max-width: 35%; float: right; margin: 0; }
+
+    p {
+      font-size: 1.6em;
+      line-height: 30px;
+      margin: 0 0 4px;
+      width: 60%;
+      float: left;
+      clear: left;
+
+      a {
+        color: $blue2;
+        text-decoration: underline;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+
+    .icon { float: left; margin-right: 10px; }
+
+    strong {
+      font-family: $heading-font;
+      width: 130px;
+      float: left;
+    }
+  }
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+}

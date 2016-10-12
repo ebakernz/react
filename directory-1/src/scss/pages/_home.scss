@@ -1,0 +1,93 @@
+/**
+ * Homepage design
+ **/
+
+.HomePage {
+
+  .banner {
+    @include OptimiseBgImg();
+    height: 350px;
+    width: 100%;
+    position: relative;
+
+    form {
+      @include CenterPositioning();
+      width: 300px;
+      height: 50px;
+    }
+  }
+
+  .split-heading {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto;
+    color: $white;
+    font-size: 3em;
+    letter-spacing: 0.3em;
+
+    span {
+      display: block;
+      word-spacing: 9999rem; /* always show one word per line */
+      font-size: 0.5em;
+      line-height: 1.3em;
+    }
+  }
+
+  .group-panels {
+
+    a {
+      display: block;
+      margin-bottom: 30px;
+
+      &.pos-1 { background: $blue1; }
+      &.pos-2 { background: $blue2; }
+
+      .icon { margin: 20px auto 10px; }
+
+      p {
+        background: $white;
+        font-family: $heading-font;
+        color: $body-text;
+        padding: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 25px 0 3px;
+      }
+
+      &:hover p {
+        color: $blue1;
+      }
+    }
+  }
+
+  .subtitle,
+  .home-content {
+    min-height: 300px;
+  }
+
+  .subtitle {
+    position: relative;
+
+    .split-heading {
+      @include CenterPositioning();
+      height: 3em;
+
+      span {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .home-content {
+    p {
+      font-family: $heading-font;
+      font-size: 2em;
+      color: $blue2;
+      line-height: 1.5em;
+      text-align: center;
+      margin: 20px auto;
+      width: 70%;
+    }
+  }
+
+}

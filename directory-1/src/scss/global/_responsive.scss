@@ -1,0 +1,405 @@
+/*
+ *	RESPONSIVE LAYOUT
+ *
+ */
+
+
+/*
+ * DESKTOP
+ */
+@media only screen and (max-width: 1750px) {
+	// body { border: 3px solid red; }
+
+
+}
+
+
+
+/*
+ * LAPTOP
+ */
+@media only screen and (max-width: 1390px) {
+//	body { border: 3px solid blue; }
+
+  .inner {
+    width: 94%;
+    margin: 0 3%;
+  }
+
+
+
+}
+
+
+/*
+ * TABLET - LANDSCAPE
+ */
+@media only screen and (max-width: 1024px) {
+//	body { border: 3px solid green; }
+
+
+  /* MARKET PLACE PAGE */
+  .product {
+    width: 31%;
+  }
+
+
+  /* NAVIGATION */
+	/* Hide mainnav and use icon */
+
+	#mob-icon {
+		display: block;
+		width: 61px;
+		height: 50px;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		z-index: 10;
+		cursor: pointer;
+
+		span {
+			display: block;
+			position: absolute;
+			height: 5px;
+			width: 100%;
+			max-width: 40px;
+			background: $white;
+			border-radius: 9px;
+			opacity: 1;
+			left: 10px;
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			transform: rotate(0deg);
+			-webkit-transition: 0.25s ease-in-out;
+			-moz-transition: 0.25s ease-in-out;
+			-o-transition: 0.25s ease-in-out;
+			transition: 0.25s ease-in-out;
+
+			&:nth-child(1) { top: 10px; }
+			&:nth-child(2), &:nth-child(3) { top: 22px; }
+			&:nth-child(4) { top: 34px; }
+		}
+
+		&.open {
+			span { background: $white; }
+			span:nth-child(1),
+			span:nth-child(4) {
+				top: 18px;
+				width: 0%;
+				left: 50%;
+			}
+			span:nth-child(2) {
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+			span:nth-child(3) {
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	.nav-panel {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+		background-color: $blue2;
+		width: 50%;
+		padding: 70px 5% 30px;
+		position: absolute;
+		top: -10px;
+		right: -110%;
+		z-index: 10;
+		min-width: 320px;
+		-webkit-transition: right 0.3s linear;
+		-moz-transition: right 0.3s linear;
+		-o-transition: right 0.3s linear;
+		transition: right 0.3s linear;
+
+		&.active { right: 0; }
+
+		nav.mainnav {
+			background: none;
+
+			ul li:hover > ul {
+				display: none;
+			}
+
+			ul li {
+				width: 100%;
+				position: static;
+				margin-bottom: 5px;
+				clear: both;
+
+				&.toplvl > a {
+					width: 90%;
+					margin: 0;
+					line-height: inherit;
+					padding: 15px 5% 12px;
+					background: $blue2;
+					border-bottom: 3px solid $blue2;
+					position: relative;
+
+					&:hover, &:focus {
+						background: $blue1;
+						text-decoration: none;
+					}
+
+					.mobile-cross {
+						background: url('../images/sidebar-expand-icon.png') no-repeat -14px 17px;
+						width: 60px;
+						height: 45px;
+						position: absolute;
+						right: 0;
+						top: 0;
+
+						&.open {
+							background-position: -14px -22px;
+						}
+					}
+				}
+
+				&.current > a,
+				&.section > a {
+					text-decoration: none;
+					border-color: $white;
+				}
+			}
+
+			ul.secondary {
+				position: static;
+
+				li {
+					min-height: 20px;
+					a {
+						width: 90%;
+						padding: 15px 5%;
+						line-height: inherit;
+						background: #0d1768;
+					}
+
+					&.current a {
+						text-decoration: underline;
+						border-color: $blue1;
+					}
+				}
+			}
+		}
+	} /* end nav panel */
+
+
+	/* HOME PAGE */
+	.HomePage {
+	.banner { height: 250px; }
+	.subtitle, .home-content { min-height: 320px; }
+	.home-content p { width: 100%; }
+	}
+
+	/* MARKET PLACE PAGE */
+	.keys {
+		div { 
+			width: 39%;
+			float: right;
+		}
+
+		p {
+			width: 45%;
+			&.search-terms {
+				width: 47%;
+			}
+		}
+	}
+
+	#popups .popup-area {
+		width: 95%;
+	}
+
+}
+
+
+
+
+/*
+ * TABLET - PORTRAIT
+ */
+@media only screen and (max-width: 770px) {
+//	body { border: 3px solid purple; }
+
+
+	/* MARKET PLACE PAGE */
+	.filter-link { margin-right: 4px; }
+	.keys div { 
+		width: 145px; 
+		margin-bottom: 10px;
+		p {
+			width: 100%;
+			float: none;
+			margin: 0;
+			line-height: 35px;
+			span.medium { 
+				margin: 4px;
+				.icon { width: 25px; height: 25px; }
+			}
+		}
+	}
+	.keys p.search-terms { width: 70%; }
+
+	.product { width: 48%; }
+
+}
+
+
+
+/*
+ * PHONE - LANDSCAPE
+ */
+@media only screen and (max-width: 680px) {
+//	body { border: 3px solid yellow; }
+
+  /* HEADER */
+  header {
+    .inner { padding: 20px 0; }
+    h1 { margin: 0; }
+  }
+
+  /* NAVIGATION PANEL */
+  .nav-panel { width: 100%; }
+
+  /* ELEMENTS */
+  .large .icon { width: 50px; height: 50px; }
+
+  /* HOMEPAGE */
+  .HomePage {
+    .w1x3,
+    .w2x3 { width: 100%; float: none; margin: 0; }
+    .banner { height: 150px;
+      #Form_QuickSearchForm {
+        width: 100%;
+        fieldset, .Actions { float: none; }
+        .field { text-align: center; }
+        .Actions input { display: block; margin: 2px auto; }
+      }
+    }
+    .subtitle { min-height: 170px; }
+
+    .group-panels a {
+    	margin-bottom: 15px;
+    	.icon { margin: 10px auto 0; }
+    	p { margin: 15px 0 3px; padding: 10px 20px; }
+    }
+  }
+
+  /* MARKET PLACE PAGE */
+  section h4 { float: none; }
+  .product {
+    width: 98%;
+
+    &.single {
+    	.details {
+			.icon { display: none; }
+		}
+    }
+  }
+
+
+  // Search form
+	.search-form #Form_QuickSearchForm { 
+		float: none; 
+		fieldset {
+			margin: 0;
+		}
+		.Actions a { width: 55px; text-align: center; font-size: 1.45em; }
+	}
+
+	.keys p.search-terms { width: 50%; }
+
+}
+
+
+/*
+ * PHONE - PORTRAIT
+ */
+@media only screen and (max-width: 400px) {
+//	body { border: 3px solid orange; }
+
+	/* HEADER */
+	header {
+		.inner { padding: 12px 0; }
+		h1 a {
+			background-size: contain;
+			width: 180px;
+			height: 38px;
+		}
+	}
+
+	#mob-icon { top: 4px; }
+
+	/* HOME PAGE */
+	.HomePage {
+		.w1x2-spaced { width: 100%; float: none; margin: 0; }
+		.group-panels a { overflow: hidden; }
+	
+		#Form_QuickSearchForm .Actions input {
+			left: 278px;
+			top: 6px;
+		}
+	}
+
+	/* MARKET PLACE PAGE */
+	.search-form #Form_QuickSearchForm { 
+		float: none; 
+		fieldset {
+			width: 60%;
+			input { width: 190px; }
+		}
+		.Actions {
+			width: 20%;
+			.action { margin-left: 5px; }
+		}
+	}
+
+	.categories { margin-top: 20px; }
+
+	.keys {
+		div { width: 100%; 
+			p { width: 50%; float: left; }
+		}
+		p.search-terms { width: 100%; margin: 0 0 10px; line-height: inherit; }
+	}
+
+	/* Product details popup */
+	.product.single {
+
+		.category-band {
+			padding: 15px 20px; 
+
+			h2,h4 {
+				float: none;
+				margin-right: 0;
+			}
+		}
+		
+		.liner { padding: 2em; }
+
+		.details {
+			img { max-width: 100%; float: none; display: block; margin: 0 auto; }
+			p { 
+				width: 100%; 
+				float: none;
+				text-align: right; 
+				strong { text-align: left; width: auto; }
+			}
+		}
+
+	}
+
+}

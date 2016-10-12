@@ -1,0 +1,236 @@
+/**
+ * General form styles
+ *
+ * These styles will be accommodated by default on all forms, so keep the selectors
+ * (ie .field.text) generic. For a unique form (ie login form) create a new file in the
+ * format /components/_form-myform.scss.
+ **/
+
+form {
+	.field {
+		margin: 5px 0;
+
+		label {
+			display: block;
+			font-size: 1.3em;
+			width: 100px;
+		}
+
+		input, textarea, select {
+			width: 250px;
+			padding: 3px;
+			border: 1px solid $body-text;
+			-webkit-border-radius: 0;
+			border-radius: 0;
+
+			&.error { border: 1px solid $red; }
+		}
+
+		textarea {
+			font-family: $body-font;
+			font-size: 1.3em;
+		}
+	}
+
+	.Actions input {
+		border: 0;
+		font-size: 1.5em;
+		text-transform: uppercase;
+		color: $white;
+		background: $link-color;
+		padding: 5px 10px;
+		-webkit-border-radius: 0;
+		border-radius: 0;
+		-webkit-appearance: none;
+
+		&:hover {
+			background: $red;
+		}
+	}
+
+	.message {
+		color: $red;
+		display: inline-block;
+		margin-left: 5px;
+		font-size: 1.1em;
+	}
+}
+
+#MemberLoginForm_LoginForm {
+
+	.field {
+
+		label {
+			float: left;
+			text-align: right;
+			margin: 5px 15px 0 0;
+		}
+
+		&.checkbox {
+			margin: 10px 0 0;
+
+			label {
+				float: none;
+				width: 380px;
+				text-align: left; }
+
+			input {
+				float: left;
+				width: 15px;
+				margin: 0 15px 0 85px; }
+
+		}
+
+	}
+
+	.Actions input,
+	.Actions #ForgotPassword {
+		margin: 10px 0 0 115px; }
+
+}
+
+/* --- SEARCH FORM --- */
+
+#Form_QuickSearchForm {
+
+  fieldset {
+    float: left;
+    margin-right: 20px;
+
+    input {
+      border: 1px solid $grey2;
+      border-radius: 50px 50px;
+      padding: 6px 16px;
+      font-size: 1.6em;
+			text-transform: uppercase;
+      -webkit-box-shadow: inset 3px 3px 5px 0px rgba(227,227,227,1);
+      -moz-box-shadow: inset 3px 3px 5px 0px rgba(227,227,227,1);
+      box-shadow: inset 3px 3px 5px 0px rgba(227,227,227,1);
+    }
+
+		a { float: right; }
+  }
+
+  .Actions {
+    float: left;
+    margin: 5px 0;
+
+    .action {
+		background: $grey1;
+		font-size: 1.4em;
+		text-transform: uppercase;
+		line-height: 1.35em;
+		color: $blue2;
+		display: inline-block;
+		margin: 2px 10px;
+		padding: 6px 10px;
+		border-radius: 50px 50px;
+
+      &:hover, &:focus {
+        background: $blue2;
+        color: $white;
+      }
+    }
+  }
+
+}
+
+/* On Homepage */
+.HomePage #Form_QuickSearchForm {
+	fieldset { margin: 0; }
+	fieldset input {
+		padding: 6px 30px 6px 16px;
+		text-align: right;
+		color: $blue2;
+	}
+	.Actions input {
+		text-indent: -999em;
+		background: none;
+		background-repeat: no-repeat;
+		background-image: url('../images/search-magnifier.png');
+		background-position: 5px 7px;
+		position: absolute;
+		left: 258px;
+
+		&:hover, &:focus {
+       		background-image: url('../images/search-magnifier.png');
+       		background-repeat: no-repeat;
+       		background-position: 5px 7px;
+       		background-color: transparent;
+	    }
+	}
+
+	.Actions a { display: none; }
+}
+
+
+/* On Marketplace pg */
+.search-form #Form_QuickSearchForm { float: left; }
+
+
+/* --- USERFORMS ---- */
+
+.userform {
+
+	.field {
+
+		label {
+			float: left;
+			width: 250px;
+		}
+
+		select {
+			width: 258px;
+		}
+
+		legend {
+			font-size: 1.3em;
+			float: left;
+			width: 250px;
+		}
+
+		.optionset {
+			list-style-type: none;
+
+			li {
+				font-size: 1em;
+				display: inline-block;
+				label {
+					width: auto;
+				}
+				input {
+					width: auto;
+					margin: 0px 4px;
+				}
+			}
+		}
+
+		&.recaptcha {
+
+			a { color: $link-color !important; }
+
+			#recaptcha_widget {
+				display: block;
+				width: 250px;
+				float: left;
+			}
+
+		/* 	#recaptcha_widget span.recaptcha_only_if_image {
+				font-size: 1.4em;
+				margin: 5px 5px 5px 0;
+				display: block;
+				float: left; } */
+
+			.retryoptions, .recaptcha_only_if_image, .recaptcha_only_if_audio, .help {
+				display: block;
+				float: left;
+				margin-right: 15px;
+			}
+		}
+	}
+
+	.Actions {
+		input { margin: 30px 0 0 250px; }
+	}
+
+}
