@@ -34,9 +34,9 @@ export function fetchProducts() {
 	}
 }
 
-export function createProduct(id, title) {
+export function addProduct(id, title) {
 	return {
-		type: "CREATE_PRODUCT",
+		type: "ADD_PRODUCT",
 		payload: {
 			id,
 			title
