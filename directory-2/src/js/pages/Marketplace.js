@@ -1,27 +1,14 @@
 import React from "react"
 import { connect } from "react-redux"
 
-import { fetchProducts } from "../actions/productsActions"
-
 import Product from "../components/Product"
 import MarketGroup from "../components/MarketGroup"
 
-@connect((store) => {
-	return {
-		products: store.products.products
-	}
-})
 export default class Marketplace extends React.Component {
 
-	componentWillMount() {
-		this.props.dispatch(fetchProducts())
-	}
-
-	fetchProducts() {
-		this.props.dispatch(fetchProducts())
-	}
-
 	render() {
+
+		console.log(this.props);
 		const { products } = this.props;
 
 		const ProductComponents = products.map((product) => {

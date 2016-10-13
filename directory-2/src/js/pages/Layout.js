@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router"
 import { connect } from "react-redux"
 
+import { fetchMarkets } from "../actions/marketsActions"
 import { fetchProducts } from "../actions/productsActions"
 
 import Footer from "../components/layout/Footer"
@@ -11,6 +12,8 @@ import Header from "../components/layout/Header"
 	// Whatever is retured gets mapped as props
 	return {
 		// get bits from the store
+		markets: store.markets.markets,
+		marketsFetched: store.markets.fetched,
 		products: store.products.products,
 		productsFetched: store.products.fetched
 	}
@@ -18,7 +21,12 @@ import Header from "../components/layout/Header"
 export default class Layout extends React.Component {
 
 	componentWillMount() {
+		this.props.dispatch(fetchMarkets()),
 		this.props.dispatch(fetchProducts())
+	}
+
+	fetchMarkets() {
+		this.props.dispatch(fetchMarkets())
 	}
 
 	fetchProducts() {
@@ -26,7 +34,7 @@ export default class Layout extends React.Component {
 	}
 
 	render() {
-		const { location } = this.props;
+		const { location, products } = this.props;
 		
 		return(
 			<div class="wrapper">
@@ -36,7 +44,7 @@ export default class Layout extends React.Component {
 				<div class="content">
 			      <div class="inner cf">
 
-			      	{this.props.children}
+			      
 
 			      </div>
 			    </div>
