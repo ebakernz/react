@@ -23,11 +23,6 @@ export default class Header extends React.Component {
   //  const homeClass = location.pathname === "/" ? "current" : "";
   //  const marketplaceClass = location.pathname.match(/^\/marketplace/) ? "current" : "non";
     const navActive = collapsed ? "" : "active";
-  
-    const bannerImage = {
-      backgroundImage: "url(images/home-banner.jpg)",
-      height: "350px"
-    }
 
     return (
       <header>
@@ -54,10 +49,6 @@ export default class Header extends React.Component {
             <span></span>
           </div>
 
-        </div>
-
-        <div class="banner" style={bannerImage}>
-          Search form
         </div>
 
       </header>

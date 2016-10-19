@@ -5,13 +5,15 @@ export function fetchMarkets() {
 			{
 				id: 1,
 				title: "Club",
-				icon: 'icons/clubs-icon.svg',
+				iconName: 'CLUB',
+				color: 'blue2',
 				urlTitle: 'club'
 			},
 			{
 				id: 2,
 				title: "Member",
-				icon: 'icons/members-icon.svg',
+				iconName: 'MEMBER',
+				color: 'blue2',
 				urlTitle: 'member'
 			}
 		]
