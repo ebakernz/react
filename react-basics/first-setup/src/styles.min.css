@@ -1,0 +1,1138 @@
+/**
+ * Primary compiling styles file
+ *
+ * This is the only file that our compiler reads, so if you don't include something
+ * in here, it won't be compiled. Make sure you include mixins and functions first
+ * so the following files can use them.
+ **/
+/* all files in the tools folder */
+/**
+ * Ease between states
+ * Use this to smooth hover/active/focus events
+ **/
+/* all files in the global folder */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Reset */
+html, body,
+h1, h2, h3, h4, h5, h6,
+ul, ol,
+img,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+nav li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; }
+nav a:hover {
+  text-decoration: none; }
+
+/**
+ * Global colour palette
+ **/
+.grey-bg {
+  background: #d9d9d9; }
+
+.blue2-bg {
+  background: #3a5b7c; }
+
+.white-bg {
+  background: #fff; }
+
+/**
+ * Global structure elements
+ *
+ * General structural rules (like columns, clears and floats) that are shared
+ * throughout the whole site.
+ **/
+html, body {
+  height: 100%; }
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden; }
+
+.inner {
+  width: 1200px;
+  margin: 0 auto; }
+
+.content {
+  padding: 30px 0;
+  background: #d9d9d9; }
+
+.liner {
+  padding: 3em; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.w1x2 {
+  width: 50%; }
+
+.w1x2-spaced {
+  width: 49%;
+  margin: 0 2% 0 0; }
+  .w1x2-spaced:last-child {
+    margin: 0; }
+
+.w1x3 {
+  width: 33.33%; }
+
+.w2x3 {
+  width: 66.66%; }
+
+.w1x3-spaced {
+  width: 30%;
+  margin: 0 3.33% 0 0; }
+
+.w1x4 {
+  width: 25%; }
+
+.w3x4 {
+  width: 75%; }
+
+.w3x4-left-spaced {
+  width: 71%;
+  margin-left: 3%; }
+
+.w4x5 {
+  width: 80%; }
+
+.w3x5 {
+  width: 60%; }
+
+.w2x5 {
+  width: 40%; }
+
+.w1x5 {
+  width: 20%; }
+
+.center {
+  text-align: center; }
+
+.clear {
+  clear: both; }
+
+/* Clear fix */
+.cf:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.cf {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .cf {
+  height: 1%; }
+
+.cf {
+  display: block; }
+
+/* close commented backslash hack */
+/**
+ * All generic typographic styles
+ *
+ * Set the base-level typography here. This includes shared h1, h2, etc as well as
+ * paragraphs, links, lists and so on. For specific buttons, headings and links create
+ * a separate file in /components/_mycomponent.scss
+ **/
+@font-face {
+  font-family: "TradeGothic";
+  src: url("../fonts/TradeGothic/trade-gothic-webfont.eot?") format("eot"), url("../fonts/TradeGothic/trade-gothic-webfont.woff") format("woff"), url("../fonts/TradeGothic/trade-gothic-webfont.woff2") format("woff2"), url("../fonts/TradeGothic/trade-gothic-webfont.ttf") format("truetype"), url("../fonts/TradeGothic/trade-gothic-webfont.svg#TradeGothic") format("svg"); }
+@font-face {
+  font-family: "TradeGothicBold2";
+  src: url("../fonts/TradeGothicBoldNo2/TradeGothicBoldNo2.eot?") format("eot"), url("../fonts/TradeGothicBoldNo2/TradeGothicBoldNo2.woff") format("woff"), url("../fonts/TradeGothicBoldNo2/TradeGothicBoldNo2.woff2") format("woff2"), url("../fonts/TradeGothicBoldNo2/TradeGothicBoldNo2.ttf") format("truetype"), url("../fonts/TradeGothicBoldNo2/TradeGothicBoldNo2.svg#TradeGothicBold2") format("svg"); }
+@font-face {
+  font-family: "TradeGothicLight";
+  src: url("../fonts/TradeGothicLight/tradegothicltstd-light.eot?") format("eot"), url("../fonts/TradeGothicLight/tradegothicltstd-light.woff") format("woff"), url("../fonts/TradeGothicLight/tradegothicltstd-light.woff2") format("woff2"), url("../fonts/TradeGothicLight/tradegothicltstd-light.ttf") format("truetype"), url("../fonts/TradeGothicLight/tradegothicltstd-light.svg#TradeGothicLight") format("svg"); }
+body {
+  font-family: "TradeGothic", Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5em;
+  color: #646363; }
+
+h1 {
+  font-family: "TradeGothicBold2";
+  font-size: 2.8em;
+  line-height: 1.3em;
+  margin: 0 0 20px; }
+
+h2 {
+  font-family: "TradeGothicBold2";
+  font-size: 2.4em;
+  line-height: 1.2em;
+  margin: 0 0 15px; }
+
+h3 {
+  font-family: "TradeGothicBold2";
+  font-size: 2em;
+  line-height: 1.4em;
+  margin: 0 0 15px; }
+
+h4 {
+  font-size: 1.7em;
+  line-height: 1em;
+  margin: 0 0 15px;
+  color: #3a5b7c; }
+
+p {
+  font-size: 1.4em;
+  margin: 0 0 15px;
+  line-height: 1.4em; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    color: red; }
+
+p a {
+  font-size: 1em;
+  color: red; }
+  p a:hover {
+    text-decoration: underline; }
+
+strong {
+  font-weight: 700; }
+
+.content ul, .content ol {
+  padding: 0 0 0 20px;
+  margin: 0 0 15px; }
+  .content ul li, .content ol li {
+    margin: 6px 0;
+    list-style-type: disc;
+    font-size: 1.4em;
+    line-height: 1.3em; }
+    .content ul li ul li, .content ol li ul li {
+      font-size: 1em; }
+.content ol li {
+  list-style-type: inherit;
+  font-size: 1em; }
+
+/** 
+ * Global page header/banner
+ **/
+header {
+  background: #4a9fd7; }
+  header .inner {
+    padding: 35px 0; }
+  header h1 {
+    float: left;
+    margin: 0 40px 0 30px; }
+    header h1 a {
+      display: block;
+      height: 46px;
+      width: 239px;
+      background: url("../images/marketplace-logo.png") no-repeat;
+      text-indent: -999em; }
+
+/**
+ * Global page footer
+ **/
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 10px 0 5px; }
+
+.copyright {
+  text-align: right;
+  font-size: 1em;
+  color: #7F7F7F;
+  margin: 0; }
+
+/**
+ * General form styles
+ *
+ * These styles will be accommodated by default on all forms, so keep the selectors
+ * (ie .field.text) generic. For a unique form (ie login form) create a new file in the
+ * format /components/_form-myform.scss.
+ **/
+form .field {
+  margin: 5px 0; }
+  form .field label {
+    display: block;
+    font-size: 1.3em;
+    width: 100px; }
+  form .field input, form .field textarea, form .field select {
+    width: 250px;
+    padding: 3px;
+    border: 1px solid #646363;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    form .field input.error, form .field textarea.error, form .field select.error {
+      border: 1px solid #ff0000; }
+  form .field textarea {
+    font-family: "TradeGothic", Arial, Helvetica, sans-serif;
+    font-size: 1.3em; }
+form .Actions input {
+  border: 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #3a5b7c;
+  padding: 5px 10px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none; }
+  form .Actions input:hover {
+    background: #ff0000; }
+form .message {
+  color: #ff0000;
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.1em; }
+
+#MemberLoginForm_LoginForm .field label {
+  float: left;
+  text-align: right;
+  margin: 5px 15px 0 0; }
+#MemberLoginForm_LoginForm .field.checkbox {
+  margin: 10px 0 0; }
+  #MemberLoginForm_LoginForm .field.checkbox label {
+    float: none;
+    width: 380px;
+    text-align: left; }
+  #MemberLoginForm_LoginForm .field.checkbox input {
+    float: left;
+    width: 15px;
+    margin: 0 15px 0 85px; }
+#MemberLoginForm_LoginForm .Actions input,
+#MemberLoginForm_LoginForm .Actions #ForgotPassword {
+  margin: 10px 0 0 115px; }
+
+/* --- SEARCH FORM --- */
+#Form_QuickSearchForm fieldset {
+  float: left;
+  margin-right: 20px; }
+  #Form_QuickSearchForm fieldset input {
+    border: 1px solid #d9d9d9;
+    border-radius: 50px 50px;
+    padding: 6px 16px;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    -webkit-box-shadow: inset 3px 3px 5px 0px #e3e3e3;
+    -moz-box-shadow: inset 3px 3px 5px 0px #e3e3e3;
+    box-shadow: inset 3px 3px 5px 0px #e3e3e3; }
+  #Form_QuickSearchForm fieldset a {
+    float: right; }
+#Form_QuickSearchForm .Actions {
+  float: left;
+  margin: 5px 0; }
+  #Form_QuickSearchForm .Actions .action {
+    background: #eef0f0;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    line-height: 1.35em;
+    color: #3a5b7c;
+    display: inline-block;
+    margin: 2px 10px;
+    padding: 6px 10px;
+    border-radius: 50px 50px; }
+    #Form_QuickSearchForm .Actions .action:hover, #Form_QuickSearchForm .Actions .action:focus {
+      background: #3a5b7c;
+      color: #fff; }
+
+/* On Homepage */
+.HomePage #Form_QuickSearchForm fieldset {
+  margin: 0; }
+.HomePage #Form_QuickSearchForm fieldset input {
+  padding: 6px 30px 6px 16px;
+  text-align: right;
+  color: #3a5b7c; }
+.HomePage #Form_QuickSearchForm .Actions input {
+  text-indent: -999em;
+  background: none;
+  background-repeat: no-repeat;
+  background-image: url("../images/search-magnifier.png");
+  background-position: 5px 7px;
+  position: absolute;
+  left: 258px; }
+  .HomePage #Form_QuickSearchForm .Actions input:hover, .HomePage #Form_QuickSearchForm .Actions input:focus {
+    background-image: url("../images/search-magnifier.png");
+    background-repeat: no-repeat;
+    background-position: 5px 7px;
+    background-color: transparent; }
+.HomePage #Form_QuickSearchForm .Actions a {
+  display: none; }
+
+/* On Marketplace pg */
+.search-form #Form_QuickSearchForm {
+  float: left; }
+
+/* --- USERFORMS ---- */
+.userform .field label {
+  float: left;
+  width: 250px; }
+.userform .field select {
+  width: 258px; }
+.userform .field legend {
+  font-size: 1.3em;
+  float: left;
+  width: 250px; }
+.userform .field .optionset {
+  list-style-type: none; }
+  .userform .field .optionset li {
+    font-size: 1em;
+    display: inline-block; }
+    .userform .field .optionset li label {
+      width: auto; }
+    .userform .field .optionset li input {
+      width: auto;
+      margin: 0px 4px; }
+.userform .field.recaptcha {
+  /* 	#recaptcha_widget span.recaptcha_only_if_image {
+  		font-size: 1.4em;
+  		margin: 5px 5px 5px 0;
+  		display: block;
+  		float: left; } */ }
+  .userform .field.recaptcha a {
+    color: #3a5b7c !important; }
+  .userform .field.recaptcha #recaptcha_widget {
+    display: block;
+    width: 250px;
+    float: left; }
+  .userform .field.recaptcha .retryoptions, .userform .field.recaptcha .recaptcha_only_if_image, .userform .field.recaptcha .recaptcha_only_if_audio, .userform .field.recaptcha .help {
+    display: block;
+    float: left;
+    margin-right: 15px; }
+.userform .Actions input {
+  margin: 30px 0 0 250px; }
+
+/**
+ * All navigation elements
+ *
+ * Global page navigation menus, mobile menus and general site navigation.
+ * Do not use this file for element navigation (ie sliders).
+ **/
+nav.mainnav {
+  float: left; }
+  nav.mainnav ul li {
+    display: inline; }
+    nav.mainnav ul li a {
+      display: inline-block;
+      color: #fff;
+      font-size: 1.4em;
+      font-family: "TradeGothicBold2";
+      text-transform: uppercase;
+      padding: 15px 0 10px;
+      margin: 0 15px;
+      border-bottom: 1px solid #4a9fd7; }
+      nav.mainnav ul li a:hover, nav.mainnav ul li a:focus {
+        border-color: #fff; }
+    nav.mainnav ul li.current a, nav.mainnav ul li.section a {
+      border-color: #fff; }
+    nav.mainnav ul li.pos-1 a {
+      margin-left: 0; }
+
+/*
+ * PAGE ELEMENTS
+ *
+ * do-dads and little dudesons
+ * buttons
+ * page links
+ *
+ */
+/* SVGS */
+.icon {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: url("../images/product-detail-icons.jpg") no-repeat; }
+  .icon.svg {
+    background: none; }
+  .icon svg {
+    width: 100%; }
+  .icon.contact {
+    background-position: 2px 3px; }
+  .icon.email {
+    background-position: 1px -46px; }
+  .icon.phone {
+    background-position: 1px -107px; }
+  .icon.website {
+    background-position: 1px -174pxx; }
+
+.white svg .path {
+  fill: #fff; }
+
+.black svg .path {
+  fill: #040707; }
+
+.icon svg {
+  width: 100%;
+  height: 100%; }
+
+.large .icon {
+  width: 160px;
+  height: 160px; }
+
+.medium .icon {
+  width: 40px;
+  height: 40px; }
+
+.small .icon {
+  width: 25px;
+  height: 25px; }
+
+/* TAGLINE BANNER */
+.tagline {
+  padding: 15px;
+  text-align: center; }
+  .tagline h2 {
+    color: #4a9fd7;
+    font-size: 2em;
+    font-family: "TradeGothic", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin: 0; }
+  .tagline.MarketPlace {
+    background: #040707; }
+
+/** POPUPS **/
+#popups {
+  width: 620px;
+  height: 507px;
+  position: absolute;
+  z-index: 21;
+  display: none;
+  /* Buttons */ }
+  #popups .popup-area {
+    background: #fff;
+    position: fixed;
+    z-index: 1;
+    display: none;
+    box-shadow: 0 0 10px #111; }
+    #popups .popup-area .inner {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: scroll; }
+  #popups .close-popup-button {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: -24px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff; }
+
+.popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: url("../images/popup-background.png"); }
+
+/* all files in the components folder */
+/* all files in the pages folder */
+/**
+ * Generic page structure
+ *
+ * Use this as your base-level page layout. For elements shared globally use /partials/_element or
+ * if your page is a unique class and layout, create a new /pages/_mypage file
+ **/
+/**
+ * Homepage design
+ **/
+.HomePage .banner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+  position: relative; }
+  .HomePage .banner form {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 300px;
+    height: 50px; }
+.HomePage .split-heading {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 3em;
+  letter-spacing: 0.3em; }
+  .HomePage .split-heading span {
+    display: block;
+    word-spacing: 9999rem;
+    /* always show one word per line */
+    font-size: 0.5em;
+    line-height: 1.3em; }
+.HomePage .group-panels a {
+  display: block;
+  margin-bottom: 30px; }
+  .HomePage .group-panels a.pos-1 {
+    background: #4a9fd7; }
+  .HomePage .group-panels a.pos-2 {
+    background: #3a5b7c; }
+  .HomePage .group-panels a .icon {
+    margin: 20px auto 10px; }
+  .HomePage .group-panels a p {
+    background: #fff;
+    font-family: "TradeGothicBold2";
+    color: #646363;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 25px 0 3px; }
+  .HomePage .group-panels a:hover p {
+    color: #4a9fd7; }
+.HomePage .subtitle,
+.HomePage .home-content {
+  min-height: 300px; }
+.HomePage .subtitle {
+  position: relative; }
+  .HomePage .subtitle .split-heading {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 3em; }
+    .HomePage .subtitle .split-heading span {
+      margin-top: 8px; }
+.HomePage .home-content p {
+  font-family: "TradeGothicBold2";
+  font-size: 2em;
+  color: #3a5b7c;
+  line-height: 1.5em;
+  text-align: center;
+  margin: 20px auto;
+  width: 70%; }
+
+/* ============================================================ Marketplace design ======== */
+/* ===================================================================================== */
+.MarketPlace {
+  background: #d9d9d9; }
+
+/* Top section with form and filters */
+.search-parameters {
+  padding: 10px 0 30px; }
+
+section h4 {
+  float: left;
+  margin: 11px 15px 4px 0; }
+
+.search-form {
+  margin: 20px 0; }
+  .search-form h4 {
+    margin-top: 15px; }
+
+/* link button */
+.filter-link {
+  background: #eef0f0;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  color: #3a5b7c;
+  display: inline-block;
+  margin: 4px 15px 4px 0;
+  padding: 7px 13px;
+  border-radius: 50px 50px;
+  cursor: pointer; }
+  .filter-link:hover, .filter-link:focus, .filter-link.active {
+    background: #3a5b7c;
+    color: #fff; }
+  .filter-link.clear {
+    font-size: 1.5em;
+    margin-top: 7px;
+    padding: 9px 15px; }
+
+.filters {
+  clear: both; }
+
+/***
+    PRODUCTS SECTION
+***/
+.keys p {
+  width: 15%;
+  margin-right: 2%;
+  float: left;
+  line-height: 40px; }
+  .keys p span.medium {
+    float: left;
+    margin-right: 8px; }
+.keys .search-terms {
+  width: 31%; }
+  .keys .search-terms.hide span {
+    display: none; }
+  .keys .search-terms.show span {
+    display: inline-block; }
+  .keys .search-terms span.group,
+  .keys .search-terms span.category {
+    text-transform: capitalize; }
+
+/* PRODUCT OVERVIEW */
+.product {
+  background: #fff;
+  min-height: 110px;
+  width: 23%;
+  margin: 0 2% 15px 0;
+  float: left;
+  display: block;
+  border-bottom: 2px solid; }
+  .product.MediumBlue {
+    border-color: #3a5b7c; }
+    .product.MediumBlue .category-band {
+      background: #3a5b7c; }
+  .product.LightBlue {
+    border-color: #4a9fd7; }
+    .product.LightBlue .category-band {
+      background: #4a9fd7; }
+  .product.Black {
+    border-color: #040707; }
+    .product.Black .category-band {
+      background: #040707; }
+  .product .category-band {
+    position: relative;
+    padding: 10px;
+    min-height: 30px; }
+    .product .category-band h4 {
+      color: #fff;
+      text-transform: uppercase;
+      font-family: "TradeGothicBold2";
+      font-size: 1.2em;
+      margin: 0;
+      line-height: 1.2em; }
+    .product .category-band .icons {
+      position: absolute;
+      top: 10px;
+      right: 10px; }
+      .product .category-band .icons .cat-2 {
+        width: 45px; }
+      .product .category-band .icons .white {
+        float: left;
+        margin-left: 2px; }
+  .product .bgimg img {
+    display: block;
+    margin: 0 auto; }
+  .product h3 {
+    color: #7F7F7F;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    margin: 10px;
+    min-height: 50px; }
+  .product .popup-content {
+    display: none; }
+
+/* PRODUCT DETAIL POPUP */
+/* tweaks to product */
+.product.single p {
+  color: #3a5b7c; }
+.product.single .category-band {
+  padding: 20px 30px;
+  min-height: auto; }
+  .product.single .category-band h2 {
+    color: #fff;
+    text-transform: uppercase;
+    float: left;
+    margin: 0; }
+  .product.single .category-band h4 {
+    font-size: 1.6em;
+    float: right;
+    margin-right: 50px;
+    margin-top: 4px; }
+  .product.single .category-band .icons {
+    top: 20px;
+    right: 20px; }
+.product.single .details {
+  border-bottom: 1px solid #7F7F7F;
+  padding-bottom: 10px;
+  margin-bottom: 20px; }
+  .product.single .details img {
+    max-width: 35%;
+    float: right;
+    margin: 0; }
+  .product.single .details p {
+    font-size: 1.6em;
+    line-height: 30px;
+    margin: 0 0 4px;
+    width: 60%;
+    float: left;
+    clear: left; }
+    .product.single .details p a {
+      color: #3a5b7c;
+      text-decoration: underline; }
+      .product.single .details p a:hover {
+        color: #ff0000; }
+  .product.single .details .icon {
+    float: left;
+    margin-right: 10px; }
+  .product.single .details strong {
+    font-family: "TradeGothicBold2";
+    width: 130px;
+    float: left; }
+.product.single img {
+  max-width: 100%;
+  height: auto; }
+
+/*
+ *	RESPONSIVE LAYOUT
+ *
+ */
+/*
+ * DESKTOP
+ */
+/*
+ * LAPTOP
+ */
+@media only screen and (max-width: 1390px) {
+  .inner {
+    width: 94%;
+    margin: 0 3%; } }
+/*
+ * TABLET - LANDSCAPE
+ */
+@media only screen and (max-width: 1024px) {
+  /* MARKET PLACE PAGE */
+  .product {
+    width: 31%; }
+
+  /* NAVIGATION */
+  /* Hide mainnav and use icon */
+  #mob-icon {
+    display: block;
+    width: 61px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer; }
+    #mob-icon span {
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      max-width: 40px;
+      background: #fff;
+      border-radius: 9px;
+      opacity: 1;
+      left: 10px;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out; }
+      #mob-icon span:nth-child(1) {
+        top: 10px; }
+      #mob-icon span:nth-child(2), #mob-icon span:nth-child(3) {
+        top: 22px; }
+      #mob-icon span:nth-child(4) {
+        top: 34px; }
+    #mob-icon.open span {
+      background: #fff; }
+    #mob-icon.open span:nth-child(1),
+    #mob-icon.open span:nth-child(4) {
+      top: 18px;
+      width: 0%;
+      left: 50%; }
+    #mob-icon.open span:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    #mob-icon.open span:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+
+  .nav-panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #3a5b7c;
+    width: 50%;
+    padding: 70px 5% 30px;
+    position: absolute;
+    top: -10px;
+    right: -110%;
+    z-index: 10;
+    min-width: 320px;
+    -webkit-transition: right 0.3s linear;
+    -moz-transition: right 0.3s linear;
+    -o-transition: right 0.3s linear;
+    transition: right 0.3s linear; }
+    .nav-panel.active {
+      right: 0; }
+    .nav-panel nav.mainnav {
+      background: none; }
+      .nav-panel nav.mainnav ul li:hover > ul {
+        display: none; }
+      .nav-panel nav.mainnav ul li {
+        width: 100%;
+        position: static;
+        margin-bottom: 5px;
+        clear: both; }
+        .nav-panel nav.mainnav ul li.toplvl > a {
+          width: 90%;
+          margin: 0;
+          line-height: inherit;
+          padding: 15px 5% 12px;
+          background: #3a5b7c;
+          border-bottom: 3px solid #3a5b7c;
+          position: relative; }
+          .nav-panel nav.mainnav ul li.toplvl > a:hover, .nav-panel nav.mainnav ul li.toplvl > a:focus {
+            background: #4a9fd7;
+            text-decoration: none; }
+          .nav-panel nav.mainnav ul li.toplvl > a .mobile-cross {
+            background: url("../images/sidebar-expand-icon.png") no-repeat -14px 17px;
+            width: 60px;
+            height: 45px;
+            position: absolute;
+            right: 0;
+            top: 0; }
+            .nav-panel nav.mainnav ul li.toplvl > a .mobile-cross.open {
+              background-position: -14px -22px; }
+        .nav-panel nav.mainnav ul li.current > a, .nav-panel nav.mainnav ul li.section > a {
+          text-decoration: none;
+          border-color: #fff; }
+      .nav-panel nav.mainnav ul.secondary {
+        position: static; }
+        .nav-panel nav.mainnav ul.secondary li {
+          min-height: 20px; }
+          .nav-panel nav.mainnav ul.secondary li a {
+            width: 90%;
+            padding: 15px 5%;
+            line-height: inherit;
+            background: #0d1768; }
+          .nav-panel nav.mainnav ul.secondary li.current a {
+            text-decoration: underline;
+            border-color: #4a9fd7; }
+
+  /* end nav panel */
+  /* HOME PAGE */
+  .HomePage .banner {
+    height: 250px; }
+  .HomePage .subtitle, .HomePage .home-content {
+    min-height: 320px; }
+  .HomePage .home-content p {
+    width: 100%; }
+
+  /* MARKET PLACE PAGE */
+  .keys div {
+    width: 39%;
+    float: right; }
+  .keys p {
+    width: 45%; }
+    .keys p.search-terms {
+      width: 47%; }
+
+  #popups .popup-area {
+    width: 95%; } }
+/*
+ * TABLET - PORTRAIT
+ */
+@media only screen and (max-width: 770px) {
+  /* MARKET PLACE PAGE */
+  .filter-link {
+    margin-right: 4px; }
+
+  .keys div {
+    width: 145px;
+    margin-bottom: 10px; }
+    .keys div p {
+      width: 100%;
+      float: none;
+      margin: 0;
+      line-height: 35px; }
+      .keys div p span.medium {
+        margin: 4px; }
+        .keys div p span.medium .icon {
+          width: 25px;
+          height: 25px; }
+
+  .keys p.search-terms {
+    width: 70%; }
+
+  .product {
+    width: 48%; } }
+/*
+ * PHONE - LANDSCAPE
+ */
+@media only screen and (max-width: 680px) {
+  /* HEADER */
+  header .inner {
+    padding: 20px 0; }
+  header h1 {
+    margin: 0; }
+
+  /* NAVIGATION PANEL */
+  .nav-panel {
+    width: 100%; }
+
+  /* ELEMENTS */
+  .large .icon {
+    width: 50px;
+    height: 50px; }
+
+  /* HOMEPAGE */
+  .HomePage .w1x3,
+  .HomePage .w2x3 {
+    width: 100%;
+    float: none;
+    margin: 0; }
+  .HomePage .banner {
+    height: 150px; }
+    .HomePage .banner #Form_QuickSearchForm {
+      width: 100%; }
+      .HomePage .banner #Form_QuickSearchForm fieldset, .HomePage .banner #Form_QuickSearchForm .Actions {
+        float: none; }
+      .HomePage .banner #Form_QuickSearchForm .field {
+        text-align: center; }
+      .HomePage .banner #Form_QuickSearchForm .Actions input {
+        display: block;
+        margin: 2px auto; }
+  .HomePage .subtitle {
+    min-height: 170px; }
+  .HomePage .group-panels a {
+    margin-bottom: 15px; }
+    .HomePage .group-panels a .icon {
+      margin: 10px auto 0; }
+    .HomePage .group-panels a p {
+      margin: 15px 0 3px;
+      padding: 10px 20px; }
+
+  /* MARKET PLACE PAGE */
+  section h4 {
+    float: none; }
+
+  .product {
+    width: 98%; }
+    .product.single .details .icon {
+      display: none; }
+
+  .search-form #Form_QuickSearchForm {
+    float: none; }
+    .search-form #Form_QuickSearchForm fieldset {
+      margin: 0; }
+    .search-form #Form_QuickSearchForm .Actions a {
+      width: 55px;
+      text-align: center;
+      font-size: 1.45em; }
+
+  .keys p.search-terms {
+    width: 50%; } }
+/*
+ * PHONE - PORTRAIT
+ */
+@media only screen and (max-width: 400px) {
+  /* HEADER */
+  header .inner {
+    padding: 12px 0; }
+  header h1 a {
+    background-size: contain;
+    width: 180px;
+    height: 38px; }
+
+  #mob-icon {
+    top: 4px; }
+
+  /* HOME PAGE */
+  .HomePage .w1x2-spaced {
+    width: 100%;
+    float: none;
+    margin: 0; }
+  .HomePage .group-panels a {
+    overflow: hidden; }
+  .HomePage #Form_QuickSearchForm .Actions input {
+    left: 278px;
+    top: 6px; }
+
+  /* MARKET PLACE PAGE */
+  .search-form #Form_QuickSearchForm {
+    float: none; }
+    .search-form #Form_QuickSearchForm fieldset {
+      width: 60%; }
+      .search-form #Form_QuickSearchForm fieldset input {
+        width: 190px; }
+    .search-form #Form_QuickSearchForm .Actions {
+      width: 20%; }
+      .search-form #Form_QuickSearchForm .Actions .action {
+        margin-left: 5px; }
+
+  .categories {
+    margin-top: 20px; }
+
+  .keys div {
+    width: 100%; }
+    .keys div p {
+      width: 50%;
+      float: left; }
+  .keys p.search-terms {
+    width: 100%;
+    margin: 0 0 10px;
+    line-height: inherit; }
+
+  /* Product details popup */
+  .product.single .category-band {
+    padding: 15px 20px; }
+    .product.single .category-band h2, .product.single .category-band h4 {
+      float: none;
+      margin-right: 0; }
+  .product.single .liner {
+    padding: 2em; }
+  .product.single .details img {
+    max-width: 100%;
+    float: none;
+    display: block;
+    margin: 0 auto; }
+  .product.single .details p {
+    width: 100%;
+    float: none;
+    text-align: right; }
+    .product.single .details p strong {
+      text-align: left;
+      width: auto; } }
+
+/*# sourceMappingURL=site.css.map */
