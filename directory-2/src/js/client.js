@@ -6,6 +6,7 @@ import { Router, Route, IndexRoute, hashHistory } from "react-router"
 import Home from "./pages/Home"
 import Layout from "./pages/Layout"
 import Marketplace from "./pages/Marketplace"
+import Admin from "./pages/Admin"
 import store from "./store"
 
 const app = document.getElementById('app');
@@ -16,6 +17,7 @@ ReactDOM.render(
 			<Route path="/" component={Layout}>
 				<IndexRoute component={Home}></IndexRoute>
 				<Route path="marketplace" name="marketplace" component={Marketplace}></Route>
+				<Route path="admin" name="admin" component={Admin}></Route>
 			</Route>
 		</Router>
 	</Provider>

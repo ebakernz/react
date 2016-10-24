@@ -38,6 +38,9 @@ export default class Header extends React.Component {
                   <li>
                     <Link to="marketplace" onClick={this.toggleResponsiveNav.bind(this)}>MarketPlace</Link>
                   </li>
+                  <li>
+                    <Link to="admin" onClick={this.toggleResponsiveNav.bind(this)}>Admin</Link>
+                  </li>
               </ul>
             </nav>
           </div>
