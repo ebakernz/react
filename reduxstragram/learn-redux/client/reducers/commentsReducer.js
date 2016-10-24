@@ -15,15 +15,17 @@ function postComments(state = [], action) {
         ...state.slice(action.i + 1)
       ]
 
-    case "UPDATE_COMMENT": 
-      console.log(action.i);
+    case "UPDATE_COMMENT":
+      console.log(action);
+      const newcomment = action.comment;
+      const newComments = [...state];
+      const commentToUpdate = action.index;
+
       // return new state with updated comment
-      return [
-        // from the start to the one before the one we want to edit
-        ...state.slice(0, action.i -1),
-        // after the edited one, to the end
-        ...state.slice(action.i + 1)
-      ]
+      /*return [
+        
+      ]*/
+
     default:
       return state;
   }

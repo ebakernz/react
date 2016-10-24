@@ -26,11 +26,11 @@ export function removeComment(postId, i) {
 }
 
 // edit comment
-export function updateComment(postId, author, comment) {
+export function updateComment(postId, index, comment) {
   return {
     type: "UPDATE_COMMENT",
     postId,
-    author,
+    index,
     comment
   }
 }

@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Comments = React.createClass({
+
+  mapStateToProps(state) {
+    return {
+      value: ''
+    }
+  },
   renderComment(comment, i) {
     return (
       <div className="comment" key={i}>
@@ -8,25 +14,25 @@ const Comments = React.createClass({
           <strong>{comment.user}</strong>
           {comment.text}
           <button className="remove-comment" onClick={this.props.removeComment.bind(null, this.props.params.postId, i)}>&times;</button>
-          <button className="remove-comment" >Edit</button>
+          <button className="remove-comment">Edit</button>
         </p>
 
-        <form hidden ref="udpateForm" className="comment-form" onSubmit={this.handleUpdate}>
-          <input type="text" ref="newcomment" placeholder="new comment"/>
-          <input type="submit" />
+        <form ref="udpateForm" className="comment-form" onSubmit={this.handleChange}>
+          <input type="hidden" name="author" ref="author" value={comment.user} readOnly />
+          <input type="text" name="comment" ref="comment" defaultValue={comment.text} />
+          <input type="hidden" name="index" ref="index" value={i} readOnly />
+          <input type="submit" hidden />
         </form>
       </div>
     )
   },
-  toggleEditForm() {
-    const collapsed = !this.state.collapsed;
-    this.setState({collapsed});
-  },
-  handleUpdate(e) {
+  handleChange(e) {
     e.preventDefault();
     const { postId } = this.props.params;
-    const newcomment = this.refs.newcomment.value;
-    this.props.updateComment(postId, newcomment);
+    const index = this.refs.index.value;
+    const comment = this.refs.comment.value;
+    console.log('post id ' + postId + ' comment ' + comment + ' index ' + index);
+    this.props.updateComment(postId, index, comment);
   },
   handleSubmit(e) {
     e.preventDefault();
@@ -37,7 +43,7 @@ const Comments = React.createClass({
     this.refs.commentForm.reset();
   },
   render() {
-    const updateFormActive = collapsed ? hidden : "";
+    console.log(this.props);
     return (
       <div className="comments">
         {this.props.postComments.map(this.renderComment)}
